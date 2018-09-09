@@ -8,16 +8,16 @@ public class Customer {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column
-    private byte customer_id;
+    private int customer_id;
     @Column
-    private byte store_id;
+    private int store_id;
     @Column
-    private byte address_id;
+    private int address_id;
 
     @ManyToOne(cascade = CascadeType.ALL)
     private Store store;
 
-    public Customer(byte store_id, byte address_id) {
+    public Customer(int store_id, int address_id) {
         this.store_id = store_id;
         this.address_id = address_id;
     }
@@ -26,27 +26,27 @@ public class Customer {
         this.store = store;
     }
 
-    public byte getCustomer_id() {
+    public int getCustomer_id() {
         return customer_id;
     }
 
-    public void setCustomer_id(byte customer_id) {
+    public void setCustomer_id(int customer_id) {
         this.customer_id = customer_id;
     }
 
-    public byte getStore_id() {
+    public int getStore_id() {
         return store_id;
     }
 
-    public void setStore_id(byte store_id) {
+    public void setStore_id(int store_id) {
         this.store_id = store_id;
     }
 
-    public byte getAddress_id() {
+    public int getAddress_id() {
         return address_id;
     }
 
-    public void setAddress_id(byte address_id) {
+    public void setAddress_id(int address_id) {
         this.address_id = address_id;
     }
 }

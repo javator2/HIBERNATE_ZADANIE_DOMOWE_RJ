@@ -32,13 +32,14 @@ public class Main {
         Session session = getSession();
         Transaction tx = session.getTransaction();
 
-        Store store = new Store((byte) 1, (byte) 1);
-        Set<Customer> customers = new HashSet<Customer>();
-        Customer customer = new Customer((byte) 1, (byte) 1);
+        Set<Customer> customers = new HashSet<>();
+        Customer customer = new Customer(1, 1);
         customers.add(customer);
+        Store store = new Store(1,1);
         store.setCustomers(customers);
 
         tx.begin();
+        session.save(store);
         tx.commit();
         session.close();
 
